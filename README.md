@@ -3,10 +3,9 @@
 An interactive, browser-based simulator for learning how AWS IAM authorization actually works. Paste in a real IAM policy, get an instant risk breakdown, watch how a small misconfiguration chains into a full account takeover, then see how Zero Trust conditions stop that same attack cold.
 
 **Live demo:** https://manieshneupane.com.np/blog/AWS-Security-Lab/
-
 **Full write-up:** https://manieshneupane.com.np/blog/
 
-![AWS Cloud Security Lab — IAM Policy Simulator](./index1t.png)
+![AWS Cloud Security Lab overview](./index1.png)
 
 > This repository documents the project. The lab itself runs at the live demo link above.
 
@@ -23,6 +22,8 @@ This lab exists to close that gap for anyone moving from application security in
 ## The Four Modules
 
 ### 1. IAM Policy Simulator
+
+![IAM Policy Simulator](./iampolicy.png)
 
 The core of the lab. You pick a policy template (or paste your own), select which AWS API actions to test it against, and the engine evaluates the policy the same way AWS's real control plane does.
 
@@ -50,6 +51,8 @@ Risk is scored **Low / Medium / High / Critical** per finding.
 
 ### 2. Attack Simulation
 
+![Attack Simulation](./Attack%20Simulation.png)
+
 Step-by-step walkthroughs of real-world AWS attack chains, showing exactly where a control-plane misconfiguration (found in Module 1) meets an infrastructure-layer flaw to produce full account compromise:
 
 - **SSRF → instance metadata credential theft** — how a web app vulnerability on an EC2 instance leads to stolen IAM credentials, and why IMDSv2 blocks it
@@ -60,6 +63,8 @@ Step-by-step walkthroughs of real-world AWS attack chains, showing exactly where
 
 ### 3. Zero Trust Demo
 
+![Zero Trust Demo](./zerotrustdemo.png)
+
 Shows how context-aware IAM conditions stop the attack chains from Module 2 — even when credentials have already leaked:
 
 - `aws:SourceIp` — restrict actions to trusted network ranges
@@ -69,22 +74,12 @@ Shows how context-aware IAM conditions stop the attack chains from Module 2 — 
 
 ### 4. Network Security
 
+![Network Security](./networksecurity.png)
+
 Covers the network-layer controls that sit alongside IAM as defense in depth:
 
 - Security Groups (stateful, instance-level) vs. Network ACLs (stateless, subnet-level)
 - VPC Endpoints — Gateway Endpoints (S3/DynamoDB) and Interface Endpoints (AWS PrivateLink) — and how they keep traffic off the public internet entirely
-
----
-
-## Screenshots
-
-Add screenshots to this repo and reference them here, for example:
-
-```md
-![IAM Policy Simulator](./screenshots/policy-simulator.png)
-![Attack Simulation](./screenshots/attack-simulation.png)
-![Zero Trust Demo](./screenshots/zero-trust-demo.png)
-```
 
 ---
 
@@ -97,3 +92,11 @@ The attack chain modeled in Module 2 (SSRF → IMDSv1 → stolen credentials →
 A full technical deep dive covering the IAM evaluation logic, all five privilege-escalation vectors, Zero Trust condition keys, and the real-world breach this lab is modeled after:
 [Deep Dive into the AWS Cloud Security Lab](https://manieshneupane.com.np/blog/)
 
+## About
+
+Built by **Maniesh Neupane** ([@pwn4arn](https://x.com/pwn4arn)) — Web Application Penetration Tester and Bug Bounty Researcher, 3+ years across 30+ programs and 90+ disclosures, transitioning into AWS Cloud Security.
+
+- Portfolio: [manieshneupane.com.np](https://manieshneupane.com.np)
+- LinkedIn: [Maniesh Neupane](https://np.linkedin.com/in/manieshneupane)
+- Bugcrowd: ManieshNeupane18
+- Hall of Fame: Apple Security, Google VRP, Microsoft MSRC
