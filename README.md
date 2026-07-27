@@ -3,9 +3,10 @@
 An interactive, browser-based simulator for learning how AWS IAM authorization actually works. Paste in a real IAM policy, get an instant risk breakdown, watch how a small misconfiguration chains into a full account takeover, then see how Zero Trust conditions stop that same attack cold.
 
 **Live demo:** https://manieshneupane.com.np/blog/AWS-Security-Lab/
+
 **Full write-up:** https://manieshneupane.com.np/blog/
 
-![AWS Cloud Security Lab — IAM Policy Simulator](./screenshot.png)
+![AWS Cloud Security Lab — IAM Policy Simulator](./index1t.png)
 
 > This repository documents the project. The lab itself runs at the live demo link above.
 
@@ -96,11 +97,3 @@ The attack chain modeled in Module 2 (SSRF → IMDSv1 → stolen credentials →
 A full technical deep dive covering the IAM evaluation logic, all five privilege-escalation vectors, Zero Trust condition keys, and the real-world breach this lab is modeled after:
 [Deep Dive into the AWS Cloud Security Lab](https://manieshneupane.com.np/blog/)
 
-## About
-
-Built by **Maniesh Neupane** ([@pwn4arn](https://x.com/pwn4arn)) — Web Application Penetration Tester and Bug Bounty Researcher, 3+ years across 30+ programs and 90+ disclosures, transitioning into AWS Cloud Security.
-
-- Portfolio: [manieshneupane.com.np](https://manieshneupane.com.np)
-- LinkedIn: [Maniesh Neupane](https://np.linkedin.com/in/manieshneupane)
-- Bugcrowd: ManieshNeupane18
-- Hall of Fame: Apple Security, Google VRP, Microsoft MSRC
